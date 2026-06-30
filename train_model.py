@@ -47,10 +47,10 @@ cat_features = [
 # TODO: use the process_data function provided to process the data.
 X_train, y_train, encoder, lb = process_data(
     train,
-    categorical_features = cat_features,
+    categorical_features=cat_features,
     label="salary",
-    training = True,
-    )
+    training=True,
+)
 
 X_test, y_test, _, _ = process_data(
     test,
@@ -73,7 +73,7 @@ save_model(encoder, encoder_path)
 # load the model
 model = load_model(
     model_path
-) 
+)
 
 # TODO: use the inference function to run the model inferences on the test dataset.
 preds = inference(model, X_test)
@@ -101,4 +101,5 @@ for col in cat_features:
         )
         with open("slice_output.txt", "a") as f:
             print(f"{col}: {slicevalue}, Count: {count:,}", file=f)
-            print(f"Precision: {p:.4f} | Recall: {r:.4f} | F1: {fb:.4f}", file=f)
+            print(
+                f"Precision: {p:.4f} | Recall: {r:.4f} | F1: {fb:.4f}", file=f)
