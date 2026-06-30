@@ -38,7 +38,7 @@ def test_train_split_size():
 
     train, test = train_test_split(
         data,
-        test_size = .20,
+        test_size =.20,
         random_state=42,
     )
 
